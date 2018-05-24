@@ -10,10 +10,21 @@
 - Added data payload parameter to check whether the user tapped on the notification or was received while in foreground.
 - **Free testing server available for free! https://cordova-plugin-fcm.appspot.com**
 
+#### In this Fork
+I've only added a conditional Firebase App initialization, because I had other plugins which were initializing Firebase App.
+Modified code is in `src/ios/AppDelegate+FCMPlugin.m` L97 to L101.
+```
+// [START configure_firebase]
+if(![FIRApp defaultApp]) {
+    [FIRApp configure];
+}
+// [END configure_firebase]
+```
+
 ## Installation
 Make sure you have ‘google-services.json’ for Android or  ‘GoogleService-Info.plist’ for iOS in your Cordova project root folder. You don´t need to configure anything else in order to have push notification working for both platforms, everything is magic.
 ```Bash
-cordova plugin add cordova-plugin-fcm
+cordova plugin add cordova-plugin-fcm-hb
 
 ```
 
@@ -35,7 +46,7 @@ Put the downloaded file 'GoogleService-Info.plist' in the Cordova project root f
 ## Usage
 
 :warning: It's highly recommended to use REST API to send push notifications because Firebase console does not have all the functionalities. **Pay attention to the payload example in order to use the plugin properly**.  
-You can also test your notifications with the free testing server: https://cordova-plugin-fcm.appspot.com
+You can also test your notifications with the free testing server: https://cordova-plugin-fcm-hb.appspot.com
 
 #### Receiving Token Refresh
 
@@ -91,7 +102,7 @@ FCMPlugin.onNotification(function(data){
 
 #### Send notification. Payload example (REST API)
 Full documentation: https://firebase.google.com/docs/cloud-messaging/http-server-ref  
-Free testing server: https://cordova-plugin-fcm.appspot.com
+Free testing server: https://cordova-plugin-fcm-hb.appspot.com
 ```javascript
 //POST: https://fcm.googleapis.com/fcm/send
 //HEADER: Content-Type: application/json

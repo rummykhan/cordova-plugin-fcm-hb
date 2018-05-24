@@ -18,7 +18,7 @@
   under the License.
 -->
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="cordova-plugin-fcm"
+           id="cordova-plugin-fcm-hb"
       version="2.1.2">
     <name>FCMPlugin</name>
     <description>Cordova FCM Plugin</description>
@@ -26,8 +26,8 @@
     <keywords>cordova, fcm, push, plugin</keywords>
     
     <info>
-		Cordova FCM plugin v2.1.2 installed
-		For more details visit https://github.com/fechanique/cordova-plugin-fcm
+		Cordova FCM plugin v1.0.0 installed
+		For more details visit https://github.com/rummykhan/cordova-plugin-fcm-hb
 	</info>
 	
     <js-module src="www/FCMPlugin.js" name="FCMPlugin">
